@@ -3,16 +3,15 @@ from django import forms
 
 def is_capital(value):
     if value[0] != value[0].title():
-        raise forms.ValidationError('first letter must be uppercase')
+        raise forms.ValidationError('First letter must be uppercase!')
 
 def valid_age(value):
     if value < 14:
-        raise forms.ValidationError('Age must be positive and elder than 14')
+        raise forms.ValidationError('Age must be positive and elder than 14!')
 
 def valid_phone_number(value):
-    if value[0:4] != '+996' and len(value) != 10:
-        raise forms.ValidationError('Phone number must start +996 and contain 10 digits')
-
+    if value[0:4] != '+996' or len(value) != 10:
+        raise forms.ValidationError('Phone number must start with +996 and contain 10 digits!')
 
 
 class UserForm(forms.Form):

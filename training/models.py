@@ -1,6 +1,7 @@
 from django.db import models
 
-class UserModel(models.Model):
+
+class User(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     age = models.PositiveIntegerField()
